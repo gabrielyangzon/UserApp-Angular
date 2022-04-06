@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 
 
-<div style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100vw; justify-content: space-evenly;align-items:center;" >
+<div class="container justify-content-center align-items-center">
 
   
-        <app-form [data]="UserType" (onAddUserClick)="addUser()" style="margin: 20px;"></app-form>
+        <app-form [data]="UserType" (onAddUserClick)="addUser()" ></app-form>
   
-        <!-- <app-table style="margin: 20px;" *ngIf="this.Users.length !== 0" [data]="Users"></app-table> -->
+        <app-table *ngIf="this.Users.length !== 0" [data]="Users"></app-table>
    
 </div>

@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
 
   @Input() data : any 
 
-  formGroup = new FormGroup({})
+  formGroup : FormGroup  = new FormGroup({})
   
 
   constructor() { }
@@ -23,22 +23,38 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     // this.formGroup = new FormGroup()
     
-    let formControls = {}
+    
 
     for(let property in this.data){
-      console.log(property)
+      
 
-      formControls
+    console.log()
 
-      Object.assign(formControls , {} )
-      property : new FormControl()
+      Object.assign(this.formGroup.controls , { [property] : new FormControl()} )
+     
 
     }
+
+    console.log(this.formGroup.controls)
+
+
+    let str  = "abc"
+
+    let ending = "bc"
+    
+
+
+    let res = str.split("").splice(ending.length,ending.length)
+
+    console.log(res)
+  
 
   }
 
   onAddUserClickHandler () {
     this.onAddUserClick.emit()
   }
+
+
 
 }
