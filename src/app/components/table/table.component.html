@@ -1,12 +1,31 @@
+<button 
+    mat-fab color="primary" 
+    aria-label="add" 
+    routerLink="/details"  
+    matTooltip="Add user">
+    <mat-icon>add</mat-icon>
+</button>
+
+
+<h1 class="m-2">User List</h1>
 <table 
- [width]="'100%'"
+    [width]="'100%'"
     mat-table 
     #myTable
     [dataSource]="this.tableData" 
-    class="mat-elevation-z8"
-    >
+    class="mat-elevation-z8 mt-4">
 
     <!-- Position Column -->
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> 
+           
+        <a routerLink="details" [state]="{ user : element}">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon></a>
+        
+        </td>
+    </ng-container>
+
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name</th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>

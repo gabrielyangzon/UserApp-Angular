@@ -13,16 +13,16 @@ export class TableComponent implements OnInit {
 
   @Input() data : any[] = []
 
-  displayedColumns: string[] = ['name','username','email','address','phone','website'];
+  displayedColumns: string[] = ['edit','name','username','email','address','phone','website'];
 
   constructor() { }
 
   tableData : any[] = []
   ngOnInit(): void {
 
+   
     this.tableData = this.data
    
-
   
   }
 
